@@ -1,14 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import CameraFeed from "./CameraFeed";
-import ARComponent from "./ARComponent";
+import SplashScreen from "./SplashScreen";
+import "./App.css";
 
 function App() {
+  const [loaded, setLoaded] = useState(false);
+
   return (
-    <div>
-      <h1>AI-AR Photography Reference App</h1>
-      <CameraFeed />
-      <ARComponent />
-    </div>
+    <>
+      {!loaded && <SplashScreen onLoaded={() => setLoaded(true)} />}
+      {loaded && (
+        <div className="app-container">
+          <header className="app-header">
+            
+            <h1>📸 AI-AR Photography Assistant</h1>
+            <p>Get AI-powered pose suggestions & lighting analysis!</p>
+          </header>
+
+          <main className="app-content">
+            <CameraFeed />
+          </main>
+
+          <footer className="app-footer">
+            <p>🚀 Built with ❤️ by <span className="highlight">Hanu</span></p>
+          </footer>
+        </div>
+      )}
+    </>
   );
 }
 

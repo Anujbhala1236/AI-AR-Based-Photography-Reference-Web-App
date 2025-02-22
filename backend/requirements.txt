@@ -1,6 +1,10 @@
 fastapi
 uvicorn
-numpy
-opencv-python-headless
-mediapipe
 python-multipart
+opencv-python
+tensorflow
+numpy
+pillow
+requests
+mediapipe
+scikit-learn 

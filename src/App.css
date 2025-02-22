@@ -1,38 +1,80 @@
-.App {
-  text-align: center;
+/* 🌟 General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* 🌟 Main App Layout */
+.app-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  min-height: 100vh;
+  background-image: url("/bg.jpg"); /* ✅ Use relative path */
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+}
+
+/* 🌟 Overlay to Improve Readability */
+.app-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* ✅ Dark overlay for readability */
+  z-index: -1;
+}
+
+/* 🌟 Header Styling */
+.app-header {
+  margin-bottom: 20px;
+  padding: 15px;
+  background: linear-gradient(135deg, #4caf50, #2e7d32);
   color: white;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.App-link {
-  color: #61dafb;
+.app-header h1 {
+  font-size: 26px;
+  margin-bottom: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.app-header p {
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+/* 🌟 Footer Styling */
+.app-footer {
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 14px;
+  color: white;
+  background: linear-gradient(135deg, #4caf50, #2e7d32);
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* 🌟 Smooth Animations */
+.app-header,
+.app-footer {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
